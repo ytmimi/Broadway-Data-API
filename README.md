@@ -5,16 +5,16 @@ As Yaakov Bressler states in his wonderful [Meduim Article](https://towardsdatas
 
 ### The Game Plan
 ##### 1) Model the Database
-We need to decide on how to structure the data.
+* We need to decide on how to structure the data.
 
 ##### 2) Build the API
-Next we will need to decide how to expose the data. Either using something like REST or GraphQL.
+* Next we will need to decide how to expose the data. Either using something like REST or GraphQL.
 
 ##### 2.5) Build Scrapers
-We already have some data, but in order to provide the best data possible, we'll need to buid out our own web scrapers.
+* We already have some data, but in order to provide the best data possible, we'll need to buid out our own web scrapers.
 
 ##### 3) Decide on a Cloud Provider
-Once we've got the proof of concept down, the database is populated, and the API is thoroughly tested we will decide on a provider to host our database and API.
+* Once we've got the proof of concept down, the database is populated, and the API is thoroughly tested we will decide on a provider to host our database and API.
 
 ##### 4) Add More Features
-Once we're up and running we want to continue to expand the data that we're providing!
+* Once we're up and running we want to continue to expand the data that we're providing!
