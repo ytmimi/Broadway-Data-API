@@ -33,6 +33,8 @@ class Grosses(models.Model):
     week_num = models.IntegerField(null=True)
     gross = models.FloatField(null=True)
     potential_gross = models.FloatField(null=True)
+    avg_ticket_price = models.FloatField(null=True)
+    top_ticket_price = models.FloatField(null=True)
     seats_sold = models.IntegerField(null=True)
     capacity_of_available_seats = models.FloatField(null=True)
 
