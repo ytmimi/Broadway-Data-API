@@ -28,7 +28,7 @@ Gross = namedtuple('Grosses', ['index', 'week', 'week_num', 'gross',
 def datetime_or_none(value):
     '''handles empty date values in our csv'''
     if value:
-        return datetime.strptime(value, '%m/%d/%y')
+        return datetime.strptime(value, '%m/%d/%y').date()
     return
 
 def int_or_none(value):
@@ -102,11 +102,15 @@ if __name__ == '__main__':
                 current_prod.save()
                 print(f'ADDING FIELDS: total_seats, and performances to {current_prod}')
 
-            gross, _ = Grosses.objects.get_or_create(production=current_prod)
-            gross.week = datetime_or_none(g.week)
-            gross.week_num = int_or_none(g.week_num)
+            gross, _ = Grosses.objects.get_or_create(
+                production = current_prod,
+                week = datetime_or_none(g.week),
+                week_num = int_or_none(g.week_num),
+            )
             gross.gross = process_dollar_str(g.gross)
             gross.potential_gross = process_dollar_str(g.gross)
+            gross.avg_ticket_price = process_dollar_str(g.average_paid_ticket)
+            gross.top_ticket_price = process_dollar_str(g.top_ticket)
             gross.seats_sold = int_or_none(g.seats_sold)
             gross.capacity_of_available_seats = process_percent_str(g.capacity)
             gross.save()
